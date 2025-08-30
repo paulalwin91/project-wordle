@@ -14,7 +14,7 @@
     "react-dom": "^19.0.0",
     "rimraf": "5.0.1"
   },
-  "scripts": {
+  "scripts": {    
     "predev": "rimraf .parcel-cache dist",
     "dev": "parcel public/index.html",
     "build": "parcel build public/index.html",
