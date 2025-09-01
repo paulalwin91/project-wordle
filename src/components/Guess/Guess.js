@@ -3,10 +3,9 @@ import HappyBanner from "../Banner/HappyBanner";
 import SadBanner from "../Banner/SadBanner";
 import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
 
-function Guess({ guesses, setGuesses, answer }) {
+function Guess({ guesses, setGuesses, answer , won, lost, setWon, setLost }) {
   const [word, setWord] = React.useState("");
-  const [won, setWon] = React.useState(false);
-  const [lost, setLost] = React.useState(false);
+  
 
   return (
     <form
@@ -14,7 +13,7 @@ function Guess({ guesses, setGuesses, answer }) {
       onSubmit={(e) => {
         e.preventDefault();
         setGuesses([...guesses, word]);
-
+        setWord("");
         if (word === answer) {
           setWon(true);
           return
@@ -23,7 +22,7 @@ function Guess({ guesses, setGuesses, answer }) {
           setLost(true);
           return
         }
-        setWord("");
+        
       }}
     >
       <label>Enter guess:</label>
@@ -43,7 +42,7 @@ function Guess({ guesses, setGuesses, answer }) {
         </>
       )}
       {won && (
-        <HappyBanner noOfGuesses={guesses.length + 1} />
+        <HappyBanner noOfGuesses={guesses.length} />
       )}
       {lost && (
         <SadBanner answer={answer} />

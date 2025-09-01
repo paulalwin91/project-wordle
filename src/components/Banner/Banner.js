@@ -1,8 +1,8 @@
 import React from 'react';
 
-export function Banner({children}) {
+export function Banner({children, className}) {
   return (
-        <div className="banner">
+        <div className={`banner ${className}`}>
           <p>
             {children}
           </p>

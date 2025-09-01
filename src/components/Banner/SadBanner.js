@@ -3,10 +3,8 @@ import { Banner } from './Banner';
 
 function SadBanner({ answer }) {
   return (
-    <Banner>
-      <div className="sad">
-        Sorry, the correct answer is <strong>{answer}</strong>.
-      </div>
+    <Banner className="sad">        
+        Sorry, the correct answer is <strong>{answer}</strong>.      
     </Banner>
   );
 }
